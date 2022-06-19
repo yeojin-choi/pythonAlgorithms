@@ -14,7 +14,7 @@ print(a//b)
 print(a**b)
 
 # List
-a = [1,2,3,4]
+a = [1,2,3,4,5]
 print(a[4])
 
 a = list() #empty list
@@ -69,7 +69,7 @@ print(a[2:4])
 #List: []
 #Tuple: ()
 a = (1,2,3,4)
-a[2] = 7
+#a[2] = 7
 #this is impossible
 
 #DICTIONARIES
@@ -102,5 +102,77 @@ print(a-b) #차집합
 
 data = set([1,2,3])
 data.add(4)
-data.update(5,6) #adding multiple values
+data.update([5,6]) #adding multiple values
 data.remove(3)
+
+# if statements
+score = 85
+if score >= 80:
+    pass # WRITE LATER
+else:
+    print("yass")
+print("end program")
+
+#shortened if else
+if score >= 80: result="Success"
+else: result = "Fail"
+
+#shortened if else 2
+result = "Success" if score >= 80 else "Fail"
+print(result)
+
+#if statements to remove elements in a set
+a = {1,2,3,4,5,5,5}
+remove_set = {3,5}
+result = [i for i in a if i not in remove_set]
+print(result)
+
+# continue statement in for statements
+scores = [90,85,77,65,97]
+cheating_list = {2,4}
+for i in range(5):
+    if i+1 in cheating_list:
+        continue #they cheated so pass this
+    if scores[i]>=80:
+        print(i+1,",you are qualified")
+
+#double for loops
+for i in range(2,10):
+    for j in range(2,10):
+        print(i,"X",j,"=",i*j)
+
+#FUNCTIONS
+
+def add(a,b):
+    return a+b
+print(add(2,7))
+print(add(b=7, a=2))
+
+#global variables
+a = 0
+def func():
+    global a
+    a += 1
+
+for i in range(10):
+    func()
+
+print(a)
+
+#lambda express
+def add(a,b):
+    return a+b
+print((lambda a,b: a+b)(3,7))
+
+#I/O
+#입력받은 데이터를 문자열을 띄어쓰기로 구분하여 각각 정수 자료형의 데이터로 저장하기
+list(map(int,input().split))
+n,m,k = map(int,input().split())
+
+#faster input
+import sys
+sys.stdin.readline().rstrip()
+
+#f-string
+answer = 9
+print(f"정답은 {answer}입니다")
