@@ -52,3 +52,55 @@ a.reverse()
 a.insert(2,3)
 a.count(3)
 a.remove(1)
+
+#strings
+data = "Hello World"
+print(data)
+
+print("Don't you know\"python\"?")
+
+a = "string"
+print(a*3)
+
+a = "abcdef"
+print(a[2:4])
+
+#tuple
+#List: []
+#Tuple: ()
+a = (1,2,3,4)
+a[2] = 7
+#this is impossible
+
+#DICTIONARIES
+data = dict()
+data['사과']='Apple'
+data['바나나']='Banana'
+data['키위']='Kiwi'
+#dictionaries are good because they take up less space. for example, if you have to mark 10,000 samples out of 100,000,
+#90,000 of them won't be used if we create a separate list. However if we use a dictionary that inefficiencty is reduced.
+if '사과'in data:
+    print("사과를 키로 갖는 데이터가 존재합니다")
+
+key_list = data.keys()
+value_list = data.values()
+for key in key_list:
+    print(data[key])
+
+#SETS
+# 1. no overlaps
+# 2. no order
+# 3. no keys, only values
+data = set([1,2,3,4,5,5,5]) #={1,2,3,4,5}
+data = {1,1,2,3,4,4,5} #={1,2,3,4,5}
+
+a = set([1,2,3,4,5])
+b = set([3,4,5,6,7])
+print(a|b) #합집합
+print(a&b) #교집합
+print(a-b) #차집합
+
+data = set([1,2,3])
+data.add(4)
+data.update(5,6) #adding multiple values
+data.remove(3)
